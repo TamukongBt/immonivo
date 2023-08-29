@@ -46,7 +46,7 @@ function Banner() {
   return (
     <motion.div className="banner" variants={banner}>
       <BannerRowTop title={"Nous"} />
-      <BannerRowCenter title={"Sommes"}  />
+      <BannerRowCenter title={"Sommes"} playMarquee={true} />
       <BannerRowBottom title={"Immonivo"} />
     </motion.div>
   );
