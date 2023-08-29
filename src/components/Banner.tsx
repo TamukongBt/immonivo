@@ -35,7 +35,8 @@ const letterAni = {
 
 // Main Export React Component
 function Banner() {
-  const [playMarquee, setPlayMarquee] = useState(false);
+  const [, setPlayMarquee] = useState(false);
+  
 
   useEffect(() => {
     setTimeout(() => {
