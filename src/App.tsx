@@ -9,7 +9,6 @@ import "./scss/main.scss";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Loader from "./components/Loader";
-import Section from "./components/Section";
 
 function App() {
   const [loading, setLoading] = useState(true);
