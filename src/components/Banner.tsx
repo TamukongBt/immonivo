@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FC } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // Prop Types
@@ -45,9 +45,9 @@ function Banner() {
 
   return (
     <motion.div className="banner" variants={banner}>
-      <BannerRowTop title={"brand"} />
-      <BannerRowCenter title={"experience"} playMarquee={playMarquee} />
-      <BannerRowBottom title={"studio"} />
+      <BannerRowTop title={"Nous"} />
+      <BannerRowCenter title={"Sommes"}  />
+      <BannerRowBottom title={"Immonivo"} />
     </motion.div>
   );
 }
@@ -55,7 +55,7 @@ function Banner() {
 // AnimatedLetters Sub-Component
 const AnimatedLetters = ({ title, disabled }: AnimatedLetterProps) => (
   <motion.span
-    className="row-title"
+    className="row-title -z-10"
     variants={disabled ? {} : banner}
     initial="initial"
     animate="animate"
@@ -86,8 +86,7 @@ const BannerRowTop = ({ title }: BannerProps) => {
         className="row-col"
       >
         <span className="row-message">
-          We are specialised in setting up the foundation of your brand and
-          setting you up for success.
+          We are a centralized platform for real estate and construction with a multiple of oyther exciting goods and services
         </span>
       </motion.div>
     </div>
@@ -97,12 +96,12 @@ const BannerRowTop = ({ title }: BannerProps) => {
 // BannerRowBottom Sub-Component
 const BannerRowBottom = ({ title }: BannerProps) => {
   return (
-    <div className="banner-row center">
+    <div className="banner-row center ">
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, delay: 1 }}
-        className="scroll"
+        className="scroll z-10"
       >
         <motion.span
           initial={{ opacity: 0 }}
@@ -127,7 +126,7 @@ const BannerRowBottom = ({ title }: BannerProps) => {
           down
         </motion.span>
       </motion.div>
-      <AnimatedLetters title={title} />
+      <AnimatedLetters title={title}  />
     </div>
   );
 };
