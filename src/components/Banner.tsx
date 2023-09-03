@@ -97,35 +97,13 @@ const BannerRowTop = ({ title }: BannerProps) => {
 // BannerRowBottom Sub-Component
 const BannerRowBottom = ({ title }: BannerProps) => {
   return (
-    <div className="banner-row center ">
+    <div className="banner-row center border-3 border-s-white" style={{ textShadow: "#9ca3af 0px 11px 0px"}}>
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, delay: 1 }}
-        className="scroll z-10"
       >
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            ease: "easeInOut",
-            duration: 1,
-            delay: 1.8,
-          }}
-        >
-          scroll
-        </motion.span>
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            ease: "easeInOut",
-            duration: 1,
-            delay: 1.8,
-          }}
-        >
-          down
-        </motion.span>
+      
       </motion.div>
       <AnimatedLetters title={title}  />
     </div>

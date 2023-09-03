@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Overlay from "./Overlay";
 import Button from "./Button";
+// import { Link } from "react-router-dom";
+import TopHeader from "./TopHeader";
 
 function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -14,8 +16,9 @@ function Header() {
         duration: 1,
         delay: 0.6,
       }}
-      className="header"
+      className="header w-full"
     >
+      <TopHeader />
       <div className="header-inner">
         <div className="logo">Imonivo</div>
         <nav className="nav  ">

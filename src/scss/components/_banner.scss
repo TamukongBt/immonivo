@@ -91,7 +91,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 50vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -99,6 +99,7 @@
   img {
     width: 800px;
     display: flex;
+   
   }
   &.final {
     display: block;

@@ -1,86 +1,73 @@
-import React, { useState, useEffect, FC } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
 
 
-function Section() {
-  const [playMarquee, setPlayMarquee] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setPlayMarquee(true);
-    }, 2000);
-  });
-  // Define the services as an array of objects
+function Section({ image }: {  image: string }) {
   const services = [
-    { name: "Web Design", icon: "🌐" },
-    { name: "Graphic Design", icon: "🎨" },
-    { name: "SEO", icon: "🔎" },
-    { name: "Social Media", icon: "📱" },
-    { name: "Content Writing", icon: "📝" },
-    { name: "Video Editing", icon: "🎥" },
+    { name: "Business Folders", icon: "🌐", image: "./images/folder.jpg" },
+    { name: "Websites", image: "./images/web.webp" },
+    { name: "Customized Professional Websites", image: "./images/web.jpg" },
+    { name: "Photography", image: "./images/photo.jpg" },
+    { name: "Digital Marketing", image: "./images/social.webp" },
+    { name: "Video Editing", image: "./images/video.jpg" },
   ];
 
-  // Define the animation variants for the grid items
-  const variants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: (i: any) => ({
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delay: i * 0.3, // stagger the animation by index
-        type: "spring", // use a spring animation
-        stiffness: 100, // adjust the stiffness
-        damping: 10, // adjust the damping
-      },
-    }),
-  };
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Change to false if you want the animation to trigger again whenever it comes into view
+  });
+
 
   return (
-    <motion.div className="banner container mx-auto my-8 h-full" >
-      <div className="text-7xl text-center font-bold"> Our Services</div>
-      {/* grid with hover effect */}
-      <div className="flex flex-wrap ">
-
-        {services.map((service, i) => (
-          <motion.div
-            key={i}
-            className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6"
-            custom={i} // pass the index as a custom prop
-            initial="hidden" // set the initial state to hidden
-            animate="visible" // set the animate state to visible
-            variants={variants} // pass the variants object
-          >
-            <div className="mx-auto h-50">
-              <div className="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                <div className="p-6">
-                  <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                    UI/UX Review Check
-                  </h5>
-                  <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                    The place is close to Barceloneta Beach and bus stop just 2 min by walk
-                    and near to "Naviglio" where you can enjoy the main night life in
-                    Barcelona.
-                  </p>
-                </div>
-                <div className="p-6 pt-0">
-                  <button
-                    className="select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    type="button"
-                    data-ripple-light="true"
-                  >
-                    Read More
-                  </button>
+    <div className="relative">
+      <motion.div
+        style={{
+          backgroundImage: image,
+          backgroundSize: 'cover',
+          height: '100vh',
+          width: '80%',
+          margin: '0 auto',
+          marginTop: '8em',
+        }}
+        initial={{ scale: 1.0 }}
+        animate={{ scale: 1.1 }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+      >
+        <motion.h1 className=" text-end underline  title-font my-6 text-5xl md:text-7xl font-bold "
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2 }} >featured products</motion.h1>
+        <div className="flex flex-wrap -m-4">
+          {services.map((service, index) => (
+            <motion.div
+              ref={ref}
+              className="lg:w-1/3 sm:w-1/2 p-8 w-full"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+              transition={{ duration: 0.3, delay: index * 0.2 }}
+              whileHover={{ y: -10, transition: { duration: 0.3, delay: 0, ease: "easeInOut" } }} >
+              <div className="flex relative">
+                <div className="z-10 w-full border-4 border-gray-200 bg-white text-center rounded-lg  overflow-hidden">
+                  <img src={service.image} alt={service.name} className="w-full  mb-4 rounded object-cover h-80" />
+                  <div className="px-8 py-10 ">
+                    <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">PRODUCT</h2>
+                    <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">{service.name}</h1>
+                    {/* <p className="leading-relaxed">Card content goes here...</p> */}
+                    <motion.button
+                      // whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+                      className="px-9 py-3 bg-gray-900 text-white  cursor-pointer hover:bg-slate-700 transition-colors duration-100  text-xl"
+                    >
+                      Order Now
+                    </motion.button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
+          ))}
+        </div>
 
-          </motion.div>
-        ))}
-      </div>
-
-
-
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
 
