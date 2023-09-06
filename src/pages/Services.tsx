@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimateSharedLayout, AnimatePresence, useViewportScroll, useTransform } from "framer-motion";
+import React, { useState } from 'react';
+import { motion } from "framer-motion";
 import CustomCursor from '../components/CustomCursor';
-import CountUp from '../components/CountUp';
 import Footer from "../components/Footer";
 import ProductTable from '../components/ProductTable';
 import Banner from '../components/Banner';
