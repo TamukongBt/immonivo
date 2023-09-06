@@ -1,0 +1,29 @@
+/* Your custom base styles */
+@tailwind base;
+
+/* Your custom component styles */
+@tailwind components;
+
+@layer components {
+  .nav {
+    @apply flex flex-col items-center justify-center w-full h-full;
+  }
+}
+
+@layer components {
+  .nav-ul {
+    @apply flex flex-col items-center justify-center w-full h-full;
+  }
+}
+
+
+
+
+
+
+/* Your custom utility styles */
+@tailwind utilities;
+
+@layer utilities {
+  /* Your utility styles here */
+}
