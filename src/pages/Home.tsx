@@ -10,7 +10,7 @@ import Services from "../components/Services";
 import Footer from "../components/Footer";
 
 function Home() {
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
   const [isOver, setIsOver] = useState(true);
