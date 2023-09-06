@@ -97,7 +97,7 @@ const BannerRowTop = ({ title }: BannerProps) => {
 // BannerRowBottom Sub-Component
 const BannerRowBottom = ({ title }: BannerProps) => {
   return (
-    <div className="banner-row center border-3 border-s-white" style={{ textShadow: "#9ca3af 0px 11px 0px"}}>
+    <div className="banner-row center border-3 border-s-white" >
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useMouse } from 'react-use';
 
-const CustomCursor = () => {
+const CustomCursor = ({border}:{border:any}) => {
     const ref = useRef(null);
     const { docX, docY } = useMouse(ref);
 
@@ -17,7 +17,7 @@ const CustomCursor = () => {
                 borderRadius: '50%',
                 // backgroundColor: 'black',
                 transform: 'translate(-50%, -50%)',
-                border: '5px double black',
+                border: border,
                
                 pointerEvents: 'none',
                 zIndex: 9999,

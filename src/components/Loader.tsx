@@ -72,7 +72,7 @@ function Loader({ setLoading }: LoaderProps) {
         <motion.div variants={itemMain} className="transition-image">
           <motion.img
             layoutId="main-image-1"
-            src={process.env.PUBLIC_URL + `/images/image-2.jpg`}
+            src={process.env.PUBLIC_URL + `/images/landing.jpg`}
           />
         </motion.div>
         <ImageBlock variants={item} id="image-3" />

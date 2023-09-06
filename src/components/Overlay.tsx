@@ -24,7 +24,7 @@ const Overlay = ({ navbarOpen, setNavbarOpen }: { navbarOpen: boolean; setNavbar
                 </li>
                 <li className="flex w-50 leading-8 list-none focus:outline-none group py-2 tracking-normal opacity-50 hover:opacity-100 transition-all duration-200 ease-in-out">
                     <a
-                        href="/"
+                        href="/services"
                         className=" h-full w-full py-4 text-7xl .text-gray-900"
                         onClick={() => {
                             setNavbarOpen(false);
@@ -35,7 +35,7 @@ const Overlay = ({ navbarOpen, setNavbarOpen }: { navbarOpen: boolean; setNavbar
                 </li>
                 <li className="flex w-50 leading-8 list-none focus:outline-none group py-2 tracking-normal opacity-50 hover:opacity-100 transition-all duration-200 ease-in-out">
                     <a
-                        href="/"
+                        href="/about"
                         className=" h-full w-full py-4 text-7xl .text-gray-900"
                         onClick={() => {
                             setNavbarOpen(false);
@@ -46,7 +46,7 @@ const Overlay = ({ navbarOpen, setNavbarOpen }: { navbarOpen: boolean; setNavbar
                 </li>
                 <li className="flex w-50 leading-8 list-none focus:outline-none group py-2 tracking-normal opacity-50 hover:opacity-100 transition-all duration-200 ease-in-out">
                     <a
-                        href="/"
+                        href="/contact"
                         className=" h-full w-full py-4 text-7xl .text-gray-900"
                         onClick={() => {
                             setNavbarOpen(false);

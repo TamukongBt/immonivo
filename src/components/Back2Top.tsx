@@ -38,14 +38,17 @@ const Back2Top = () => {
                 position: 'fixed',
                 bottom: '20px',
                 right: '20px',
-                fontSize: '2.5em'
+                fontSize: '2.5em',
+                zIndex: '999',
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={isAtTop ? scrollToBottom : scrollToTop}
-            
+
         >
-            <motion.div className='bg-white rounded-full p-5 z-10'>
+            <motion.div className='bg-white rounded-full p-5 z-10'
+                animate={{ y: ["0px", "10px", "0px"] }}  // bounce
+                transition={{ duration: 1, repeat: Infinity }} >
                 {isAtTop ? <FaChevronDown /> : <FaChevronUp />}
             </motion.div>
             {/* {isAtTop ? 'Scroll Down' : 'Back to Top'} */}

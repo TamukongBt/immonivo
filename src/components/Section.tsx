@@ -33,7 +33,7 @@ function Section({ image }: {  image: string }) {
         animate={{ scale: 1.1 }}
         transition={{ duration: 1, ease: 'easeInOut' }}
       >
-        <motion.h1 className=" text-end underline  title-font my-6 text-5xl md:text-7xl font-bold "
+        <motion.h1 className=" text-end underline teko  title-font my-6 text-8xl md:text-8xl font-bold "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 2 }} >featured products</motion.h1>

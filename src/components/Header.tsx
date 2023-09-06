@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Overlay from "./Overlay";
 import Button from "./Button";
 // import { Link } from "react-router-dom";
 import TopHeader from "./TopHeader";
 
 function Header() {
+  // const location = useLocation(); 
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <motion.div
@@ -20,23 +22,25 @@ function Header() {
     >
       <TopHeader />
       <div className="header-inner">
-        <div className="logo">Imonivo</div>
+        <div className="logo teko">Immonivo</div>
         <nav className="nav  ">
           <ul className="flex flex-row font-medium p-4 md:p-0 mt-4 border right-0   md:flex-row md:space-x-8  ">
-            <li>
-              <a href="/home">Home</a>
+            <li className={window.location.pathname === "/"? 'contact':''} >
+              {/* <Link to="/">Home</Link> */}
+              <a href="/"  >Home</a>
+              
             </li>
-            <li>
+            <li className={window.location.pathname === "/services"? 'contact':''}>
               <a href="/services">Our Services and Products</a>
             </li>
-            <li>
+            <li className={window.location.pathname === "/partners"? 'contact':''}>
               <a href="/partners">Our Models</a>
             </li>
-            <li>
+            <li className={window.location.pathname === "/about"? 'contact':''}>
               <a href="/about">About Us</a>
             </li>
-            <li className="contact">
-              <a href="/about">Contact Us</a>
+            <li className={window.location.pathname === "/contact"? 'contact':''}>
+              <a href="/contact">Contact Us</a>
             </li>
           </ul>
         </nav>
