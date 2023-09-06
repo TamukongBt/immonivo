@@ -24,18 +24,18 @@ const Footer = () => {
                                 <h3 className="mb-4 text-3xl md:text-6xl teko">Where We Are</h3>
                                 <div className="flex space-x-4 text-white">
                                     {/* You'll need to replace these with your actual social media links */}
-                                    <a href="#"><i className="text-white fab fa-facebook"></i></a>
-                                    <a href="#"><i className="text-white fab fa-twitter"></i></a>
-                                    <a href="#"><i className="text-white fab fa-instagram"></i></a>
+                                    <a href="https://www.faceebook.com"><i className="text-white fab fa-facebook"></i></a>
+                                    <a href="https://www.twitter.com"><i className="text-white fab fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com"><i className="text-white fab fa-instagram"></i></a>
                                 </div>
                             </div>
                             <div>
                                 <h3 className="mb-4 text-3xl md:text-6xl teko">Quick Links</h3>
                                 <ul className='list-none'>
                                     {/* You'll need to replace these with your actual page links */}
-                                    <li className='mb-3'><a className='text-3xl font-light' href="#">About Us</a></li>
-                                    <li className='mb-3'><a className='text-3xl font-light' href="#">Contact Us</a></li>
-                                    <li className='mb-3'><a className='text-3xl font-light' href="#">Privacy Policy</a></li>
+                                    <li className='mb-3'><a className='text-3xl font-light' href="/about">About Us</a></li>
+                                    <li className='mb-3'><a className='text-3xl font-light' href="/contact">Contact Us</a></li>
+                                    <li className='mb-3'><a className='text-3xl font-light' href="/privacy">Privacy Policy</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -48,9 +48,9 @@ const Footer = () => {
                     <h3 className="mb-4 text-xl uppercase">Follow us</h3>
                     <div className="flex space-x-12">
                         {/* You'll need to replace these with your actual social media links */}
-                        <a href="#"><FontAwesomeIcon icon={faFacebook} className='text-3xl md:text-7xl' /> </a>
-                        <a href="#"><FontAwesomeIcon icon={faTwitter} className='text-3xl md:text-7xl' /></a>
-                        <a href="#"><FontAwesomeIcon icon={faInstagram} className='text-3xl md:text-7xl' /></a>
+                        <a href="https://www.faceebook.com"><FontAwesomeIcon icon={faFacebook} className='text-3xl md:text-7xl' /> </a>
+                        <a href="https://www.twitter.com"><FontAwesomeIcon icon={faTwitter} className='text-3xl md:text-7xl' /></a>
+                        <a href="https://www.instagram.com"><FontAwesomeIcon icon={faInstagram} className='text-3xl md:text-7xl' /></a>
                     </div>
                 </div>
                 <div className='flex text-center items-center '>
